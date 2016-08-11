@@ -28,4 +28,6 @@ p {
     height: 24px;
     border: none;
     background: transparent;
+    float: right;
+    cursor: pointer;
 }

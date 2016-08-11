@@ -8,9 +8,6 @@
 
 <body>
 
-Кнопка для удаления:
-<button class="remove-button">[x]</button>
-
 <div>
     <div class="pane">
         <h3>Лошадь</h3>
@@ -31,12 +28,11 @@
     var divToAddArr = document.querySelectorAll('.pane');
 
     for(var i=0; i < divToAddArr.length; i++) {
-        var btn = document.querySelector('button').cloneNode(true);
-        btn.style.float = 'right';
-        btn.style.cursor = 'pointer';
-        divToAddArr[i].insertBefore(btn,  divToAddArr[i].firstElementChild);
+        var btn = "<button class='remove-button'>[x]</button>";
 
-        btn.addEventListener('click', removePane);
+        divToAddArr[i].insertAdjacentHTML('afterBegin', btn);
+
+        divToAddArr[i].firstElementChild.addEventListener('click', removePane);
     }
 
     function removePane(e) {
